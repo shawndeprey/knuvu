@@ -1,0 +1,14 @@
+default: &default
+  address:              smtp.mandrillapp.com
+  port:                 587
+  domain:               logicly.org
+  user_name:            app25683065@heroku.com
+  password:             vBbGEkA1lMopLhZXeW9NXw
+  authentication:       login
+  enable_starttls_auto: true
+
+development:
+  <<: *default
+
+production:
+  <<: *default
