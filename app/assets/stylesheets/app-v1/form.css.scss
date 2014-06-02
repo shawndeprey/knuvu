@@ -1,0 +1,46 @@
+input[type="text"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder {
+  color: #b7b7b7;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  background: white;
+  border: 2px solid #d9d9d9;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+
+  &:focus {
+    border-color: #8e9fbb;
+  }
+}
+
+button {
+  border: 0;
+  color: white;
+  cursor: pointer;
+  background: #666666;
+  transition: 0.5s background;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+
+  &:hover {
+    background: #333333;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+ul.errors {
+  list-style: none;
+  padding: 0;
+
+  li {
+    color: rgb(190, 87, 87);
+    width: 50%;
+    text-align: left;
+  }
+}
