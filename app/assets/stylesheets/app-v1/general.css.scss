@@ -3,8 +3,13 @@ html, body, body > .ember-view {
   font-family: ANC-Regular, sans-serif; 
 }
 
-p, ul, li, span, h1, h2, h3, h4, h5, h6 {
+a, p, ul, li, span, h1, h2, h3, h4, h5, h6 {
   font-family: ANC-Regular, sans-serif;
+}
+
+a, p {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
 *, *:before, *:after {
@@ -53,11 +58,6 @@ body {
     color: #222222;
   }
 
-  p {
-    -webkit-font-smoothing: antialiased;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-  }
-
   div, header, footer, li, a, button, input, textarea {
     position: relative;
     margin: auto;
@@ -66,6 +66,8 @@ body {
 
   a {
     //color: #018de0;
+    text-decoration: none;
+
     &:hover {
       //color: #26a6f3;
     }

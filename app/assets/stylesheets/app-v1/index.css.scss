@@ -5,7 +5,31 @@ body.index {
   -o-background-size: cover;
   background-size: cover;
 
-  div {
+  div.actions {
+    position: fixed;
+    width: 19em;
+    padding: 1em;
+    left: 50%;
+    margin-left: -10em;
+    top: 3em;
+
+    a {
+      color: white;
+      font-size: 1.75em;
+      transition: 0.3s text-shadow;
+      text-shadow: 0 0 0 rgba(213,206,226,0);
+
+      &:hover {
+        text-shadow: 0px 1px 20px rgba(213,206,226,1), 0px 1px 20px rgba(213,206,226,1);
+      }
+
+      &:nth-of-type(2) {
+        margin-left: 4em;
+      }
+    }
+  }
+
+  div.title {
     position: fixed;
     width: 55em;
     margin: 1em;
@@ -24,6 +48,7 @@ body.index {
       margin: 0 auto;
       display: block;
       width: 46%;
+      margin-left: 13.5em;
     }
     p {
       font-family: ANC-Italic, sans-serif;

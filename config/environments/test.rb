@@ -35,4 +35,7 @@ Knuvu::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  # Force circleci to use this elasticsearch url
+  Tire.configure { url "http://localhost:9200" }
 end

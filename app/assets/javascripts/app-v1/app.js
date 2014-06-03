@@ -2,6 +2,14 @@ var namespace = 'api/v1';
 App = Ember.Application.create();
 
 App.Router.map(function(){
+  this.route('signin');
+  this.route('signup');
+  //this.resource('users', function() {
+    //this.resource('users.show', { path: '/:user_id' });
+    //this.resource('companies.register', { path: '/register' }, function() {
+      //this.route('1');
+    //});
+  //});
   // this.route("file-not-found", { path: "*path"});
 });
 

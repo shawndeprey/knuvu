@@ -18,6 +18,9 @@ gem 'newrelic_rpm', '~> 3.8.1.221'
 gem 'redcarpet', '~> 3.1.2'
 gem 'aws-sdk', '~> 1.41.0'
 gem 'prerender_rails', '~> 1.0.1'
+gem 'tire', '~> 0.6.2'
+gem 'tire-contrib', '~> 0.1.3'
+gem 'paperclip', '~> 4.1.1'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.1'
