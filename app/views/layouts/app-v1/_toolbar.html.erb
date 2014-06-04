@@ -1,0 +1,19 @@
+<div class="header">
+  <a {{action toggleToolbar target='view'}}>
+    <i {{bind-attr class=":fa view.openBar:fa-minus:fa-plus"}}></i>
+  </a>
+  <h2>{{view.title}}</h2>
+</div>
+
+<div class="body">
+  <div class="expanded">
+    <p>{{#link-to 'index'}}Home{{/link-to}}</p>
+  </div>
+  <div class="condensed">
+    <p>CT</p>
+  </div>
+</div>
+
+<div class="footer">
+  
+</div>

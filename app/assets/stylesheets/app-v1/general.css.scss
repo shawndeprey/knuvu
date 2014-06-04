@@ -1,13 +1,13 @@
 html, body, body > .ember-view { 
-  height: 100%; 
-  font-family: ANC-Regular, sans-serif; 
+  height: 100%;
+  font-family: ANC-Regular, sans-serif;
 }
 
 a, p, ul, li, span, h1, h2, h3, h4, h5, h6 {
   font-family: ANC-Regular, sans-serif;
 }
 
-a, p {
+a, p, h1, h2, h3, h4, h5, h6 {
   -webkit-font-smoothing: antialiased;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }

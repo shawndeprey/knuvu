@@ -1,4 +1,6 @@
 var namespace = 'api/v1';
+Ember.deprecate = function(){};
+//Ember.warn = function(i){};
 App = Ember.Application.create();
 
 App.Router.map(function(){
