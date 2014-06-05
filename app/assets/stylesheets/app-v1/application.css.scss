@@ -7,7 +7,7 @@ div.modal {
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
   z-index: 1;
   background: white;
-  left: 50%;
+  left: 56%;
   margin-left: -25em;
   top: 35%;
 
@@ -32,16 +32,39 @@ div.modal {
   }
 
   button {
+    font-size: 1.5em;
+    border: 0;
+    color: white;
+    padding: 0.4em 1.5em 0.4em 1.5em;
+    cursor: pointer;
+    font-family: ANC-Regular, sans-serif;
+    border-radius: 0.2em;
+    background: linear-gradient(#B2D137, #a7c434);
+    color: white;
+    outline: none;
     width: 100%;
+    background: #013e64;
+    transition: 0.5s background;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+
+    &:hover {
+      background: #0063a0;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
   }
 }
 
 section {
-  padding: 1em;
-  margin: 0 auto;
-  max-width: 95em;
-  @media (max-width: 600px) {
-    padding: 0.5em;
-    margin: 0.5em 0.5em 1em 0.5em;
+  padding-left: 250px;
+  max-width: 100%;
+
+  div.centered-content {
+    padding: 1em 1em 1em 0;
+    margin: 0 auto;
+    max-width: 64em;
   }
 }

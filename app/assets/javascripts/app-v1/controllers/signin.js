@@ -1,2 +1,2 @@
-App.SigninController = App.BaseController.extend({
+App.SigninController = App.FormController.extend({
 });

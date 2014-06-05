@@ -1,3 +1,13 @@
 <section>
-<p>This in the Sign Up page...</p>
+  <div class="centered-content">
+    <h1>Sign Up for KnuVu</h1>
+    <div class="special-hr"></div>
+    {{view App.ErrorsView errors=errors}}
+    <form {{action "submit" on="submit"}}>
+      {{input type="text" placeholder="Your first and last name" spellcheck="false" autocomplete="off" valueBinding=full_name}}
+      {{input type="text" placeholder="Your email address" spellcheck="false" pattern="[^ @]*@[^ @]*" autocomplete="off" valueBinding=email}}
+      {{input type="password" placeholder="Your password" spellcheck="false" autocomplete="off" valueBinding=password}}
+      <button {{bind-attr disabled="disabled"}}>Request Conversation</button>
+    </form>
+  </div>
 </section>

@@ -1,46 +1,91 @@
-input[type="text"]::-webkit-input-placeholder,
-input[type="password"]::-webkit-input-placeholder {
-  color: #b7b7b7;
-}
+body {
+  form {
 
-input[type="text"],
-input[type="password"],
-textarea {
-  background: white;
-  border: 2px solid #d9d9d9;
-  -webkit-font-smoothing: antialiased;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    label {
+      font-size: 2em;
 
-  &:focus {
-    border-color: #8e9fbb;
+      @media (max-height: 764px) {
+        font-size: 1.3em;
+      }
+    }
+
+    input[type="text"]::-webkit-input-placeholder,
+    input[type="password"]::-webkit-input-placeholder {
+      color: #b7b7b7;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea {
+      background: white;
+      padding: 0.8em;
+      font-size: 2em;
+      font-family: ANC-Regular, sans-serif;
+      letter-spacing: 1px;
+      width: 100%;
+      border: 2px solid #d9d9d9;
+      border-radius: 0.2em;
+      box-sizing: border-box;
+      transition: border 0.5s;
+      -webkit-font-smoothing: antialiased;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+      margin-top: 1em;
+
+      @media (max-height: 764px) {
+        font-size: 1.3em;
+      }
+
+      &:focus {
+        border-color: #8e9fbb;
+      }
+    }
+
+    button {
+      font-size: 2em;
+      border: 0;
+      color: white;
+      padding: 0.8em 1.5em 0.8em 1.5em;
+      cursor: pointer;
+      font-family: ANC-Regular, sans-serif;
+      border-radius: 0.2em;
+      background: linear-gradient(#B2D137, #a7c434);
+      color: white;
+      outline: none;
+      width: 100%;
+      background: #013e64;
+      transition: 0.5s background;
+      -webkit-font-smoothing: antialiased;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+      margin-top: 1em;
+
+      @media (max-height: 764px) {
+        font-size: 1.3em;
+      }
+
+      &:hover {
+        background: #0063a0;
+      }
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
   }
-}
 
-button {
-  border: 0;
-  color: white;
-  cursor: pointer;
-  background: #666666;
-  transition: 0.5s background;
-  -webkit-font-smoothing: antialiased;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  ul.errors {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-  &:hover {
-    background: #333333;
-  }
+    li {
+      color: rgb(190, 87, 87);
+      text-align: left;
+      font-family: ANC-Regular, sans-serif;
+      font-size: 1.5em;
 
-  &:disabled {
-    opacity: 0.5;
-  }
-}
-
-ul.errors {
-  list-style: none;
-  padding: 0;
-
-  li {
-    color: rgb(190, 87, 87);
-    width: 50%;
-    text-align: left;
+      @media (max-height: 764px) {
+        font-size: 1em;
+      }
+    }
   }
 }

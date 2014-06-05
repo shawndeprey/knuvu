@@ -1,1 +1,7 @@
-_errors.html.erb
+{{#if view.errors}}
+  {{#each view.errors}}
+    <li class="error">
+      {{this}}
+    </li>
+  {{/each}}
+{{/if}}
