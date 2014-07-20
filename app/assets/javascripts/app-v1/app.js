@@ -6,6 +6,7 @@ App = Ember.Application.create();
 App.Router.map(function(){
   this.route('signin');
   this.route('signup');
+  this.route('dashboard');
   //this.resource('users', function() {
     //this.resource('users.show', { path: '/:user_id' });
     //this.resource('companies.register', { path: '/register' }, function() {
@@ -49,7 +50,7 @@ App.Router.reopen({
 });
 
 // Sessions
-/*Ember.Application.initializer({
+Ember.Application.initializer({
   name: 'session',
   initialize: function(container) {
     // Stop app loading until we have loaded our session
@@ -59,9 +60,14 @@ App.Router.reopen({
       function(session){
         // If we found a session, set a global object to it.
         if(session != undefined && session != null){
-          var controller = container.lookup('controller:session');
-          controller.store.pushPayload('user', {user:session});
-          controller.set('user', controller.store.find('user', session.id));
+          // Get the signin controller
+          var controller = container.lookup('controller:signin');
+
+          // Load the user model into the clients memory
+          controller.store.pushPayload('user', {user:session.user});
+
+          // Set the user attribute of the signin controller to the user object
+          controller.set('user', controller.store.find('user', session.user.id));
         }
         // Resume App Loading
         App.advanceReadiness();
@@ -71,7 +77,7 @@ App.Router.reopen({
       }
     );
   }
-});*/
+});
 
 // Google Analytics Support
 /*

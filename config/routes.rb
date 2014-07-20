@@ -1,6 +1,7 @@
 Knuvu::Application.routes.draw do
   namespace :api, :constraints => {:format => 'json'} do
     namespace :v1 do
+      resource :session
       resources :users
     end
   end

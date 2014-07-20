@@ -15,22 +15,15 @@ class User < ActiveRecord::Base
   end
 =end
 
-  class EmailValidator < ActiveModel::EachValidator
-    def validate_each(record, attribute, value)
-      unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-        record.errors[attribute] << (options[:message] || "is not an email")
-      end
-    end
-  end
-
   # Attributes full_name, email, phone, password, reset_hash, verified, admin, created_at, updated_at
 
   # File Attachments using Paperclip and resized with ImageMagick
   has_attached_file :avatar, :styles => { :large => "500x500>", :medium => "300x300>", :thumb => "100x100>" }
 
-  validates_length_of :password, minimum: 8, maximum: 31, presence: true
+  validates_length_of :password, minimum: 8, maximum: 32, presence: true
   validates :full_name, presence: true
-  validates :email, uniqueness: true, email: true
+  validates :email, uniqueness: true, on: :create
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: "is not an email" }
 
   before_save :encrypt_password
   after_destroy :clean_dependents

@@ -1,9 +1,10 @@
 class Api::V1::UsersController < Api::V1::BaseController
-  #skip_before_filter :require_session
-  #skip_before_filter :require_verification
-  before_action :set_user, only: [:show, :update, :destroy]
+  skip_before_action :require_session, only: [:create]
+  skip_before_action :require_verification, only: [:create]
+  before_action :require_admin_session, only: [:show, :destroy]
+  before_action :set_user, except: [:create]
 
-  # GET /company_lists/1.json
+  # GET /api/v1/users/1.json
   def show
     # MetricsHelper::track MetricsHelper::USER_SHOW, {email: @user.email})
     # Verify user and send back limited model if not session user
@@ -17,7 +18,7 @@ class Api::V1::UsersController < Api::V1::BaseController
       # MetricsHelper::track(MetricsHelper::USER_CREATE, {email: @user.email})
       render json: @user, root: :user, status: :created
     else
-      render json: {'errors' => @user.errors.full_messages}, status: :unprocessable_entity
+      render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +28,7 @@ class Api::V1::UsersController < Api::V1::BaseController
       # MetricsHelper::track(MetricsHelper::USER_UPDATE, {email: @user.email})
       render json: @user, root: :user, status: :accepted
     else
-      render json: {'errors' => @user.errors.full_messages}, status: :unprocessable_entity
+      render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity
     end
   end
 

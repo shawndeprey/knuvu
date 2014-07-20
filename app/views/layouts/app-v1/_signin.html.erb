@@ -1,5 +1,12 @@
 <section>
   <div class="centered-content">
-    <p>This in the Sign In page...</p>
+    <h1>Sign In to KnuVu</h1>
+    <div class="special-hr"></div>
+    {{view App.ErrorsView errors=errors}}
+    <form {{action "submit" on="submit"}}>
+      {{input type="text" placeholder="Your email address" spellcheck="false" pattern="[^ @]*@[^ @]*" autocomplete="off" valueBinding=email}}
+      {{input type="password" placeholder="Your password" spellcheck="false" autocomplete="off" valueBinding=password}}
+      <button {{bind-attr disabled="disabled"}}>Sign In</button>
+    </form>
   </div>
 </section>
