@@ -1,5 +1,5 @@
 App.ApplicationController = App.BaseController.extend({
-  //needs: ['session'],
+  needs: ['signin'],
   menu_title: 'Knuvu',
   setTitle: function(title, use_suffix) {
     if (typeof use_suffix == 'undefined') {
@@ -15,5 +15,11 @@ App.ApplicationController = App.BaseController.extend({
     } else {
       document.title = 'Knuvu';
     }
+  },
+  session_user: function() {
+    return this.get('controllers.signin.user');
+  }.property('controllers.signin.user'),
+  deauthenticate: function() {
+    this.get('controllers.signin').deauthenticate();
   }
 });

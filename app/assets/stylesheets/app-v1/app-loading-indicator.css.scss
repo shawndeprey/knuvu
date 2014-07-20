@@ -1,0 +1,23 @@
+@-webkit-keyframes appLoadingIndicator {
+  0%      { -webkit-filter: hue-rotate(360deg); }
+  50%     { -webkit-filter: hue-rotate(0deg); }
+  100%    { -webkit-filter: hue-rotate(360deg); }
+}
+
+body {
+  div#app-loading-indicator {
+    position: fixed; 
+    top: -0.4em; 
+    height: 0.4em; 
+    z-index: 10000; 
+    width: 100%;
+    background: linear-gradient(90deg, #F1B11C, #C2D041); 
+    -webkit-animation: appLoadingIndicator 5s; 
+    -webkit-animation-iteration-count: infinite;
+    transition: top 0.2s;
+
+    &.on {
+      top: 0;
+    }
+  }
+}

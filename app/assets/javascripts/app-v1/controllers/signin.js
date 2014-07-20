@@ -44,10 +44,16 @@ App.SigninController = App.FormController.extend({
     $.ajax({type:'DELETE', url: '/'+namespace+'/session.json'}).then(
       function(session){
         self.set('user', null);
+        self.transitionToRoute('/');
       },
       function(response){
-        // Handle Fail Cases
+        self.showModal('Sorry about this, but we were unable to sign you out. Please try again.');
       }
     );
-  }
+  },
+  reset: function(){
+    this._super();
+    this.email = null;
+    this.password = null;
+  },
 });

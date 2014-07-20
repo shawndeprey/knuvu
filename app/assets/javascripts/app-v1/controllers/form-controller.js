@@ -16,11 +16,11 @@ App.FormController = App.BaseController.extend({
     this.set('errors', errors);
     $('.errors').scrollToElement();
     this.set('disabled', false);
-    // HideLoadingIndicator();
+    $('div#app-loading-indicator').addClass('on');
   },
   clearErrors: function(){
     this.set('errors', null);
     this.set('disabled', true);
-    // ShowLoadingIndicator();
+    $('div#app-loading-indicator').removeClass('on');
   }
 });
