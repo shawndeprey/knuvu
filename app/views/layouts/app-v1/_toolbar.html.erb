@@ -1,5 +1,5 @@
 <div class="header">
-  <a {{action toggleToolbar target='view'}}>
+  <a {{action toggleMenuOption 'openBar' target='view'}}>
     <i {{bind-attr class=":fa view.openBar:fa-minus:fa-plus"}}></i>
   </a>
   <h2>{{view.title}}</h2>
@@ -16,15 +16,23 @@
 
 <div class="footer">
   {{#if session_user}}
-    <div class="user-menu">
+    <div {{bind-attr class=":user-menu view.openUserMenu:open:close"}}>
       <ul>
         <li><a href="javscript:void(0)" {{action deauthenticate}}>Sign Out</a></li>
       </ul>
     </div>
     <div class="user-panel">
-      <img class="logo" src="nothing" />
-      <span class="full-name">{{session_user.full_name}}</span>
-      <span class="email">{{session_user.email}}</span>
+      <a {{action toggleMenuOption 'openUserMenu' target='view'}}>
+        <div {{bind-attr class=":user-info view.openBar:open:close"}}>
+          <img class="logo" src="nothing" />
+          <div class="name-and-email">
+            <span class="full-name">{{session_user.full_name}}</span>
+            <br />
+            <span class="email">{{session_user.email}}</span>
+          </div>
+        </div>
+        <i {{bind-attr class=":fa view.openUserMenu:fa-chevron-left:fa-chevron-right"}}></i>
+      </a>
     </div>
   {{/if}}
 </div>

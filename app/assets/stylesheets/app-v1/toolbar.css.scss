@@ -10,6 +10,11 @@ body div.toolbar {
   background: #317eac;
   z-index: 1;
 
+  i.fa-minus, i.fa-plus, i.fa-chevron-right, i.fa-chevron-left {
+    font-size: 2em;
+    color: white;
+  }
+
   &.open-bar {
     width: 250px;
 
@@ -35,11 +40,6 @@ body div.toolbar {
 
     h2 {
       margin: 0;
-      color: white;
-    }
-
-    i.fa-minus, i.fa-plus {
-      font-size: 2em;
       color: white;
     }
   }
@@ -83,8 +83,111 @@ body div.toolbar {
     position: absolute;
     bottom: 0;
 
+
     div.user-menu {
-      
+      width: 20em;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.65);
+      border: 2px #575757 solid;
+      position: absolute;
+      right: -21em;
+      top: -1em;
+
+      ul {
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          border-radius: 5px;
+          &:hover {
+            background: #f2f2f2;
+          }
+
+          a {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 1.25em;
+            color: #333333;
+          }
+        }
+      }
+
+      &.close {
+        display: none;
+      }
+
+      &.open {
+        display: block;
+      }
+    }
+
+    div.user-panel {
+      height: 65px;
+      width: 100%;
+
+      a {
+        display: block;
+        height: 65px;
+        width: 100%;
+
+        div.user-info, i {
+          position: absolute;
+        }
+
+        div.user-info {
+          transition: opacity .25s ease-in-out;
+
+          &.open {
+            opacity: 1;
+          }
+
+          &.close {
+            opacity: 0;
+          }
+
+          img {
+            height: 50px;
+            width: 50px;
+            background: white;
+            border: 2px solid #002b45;
+            border-radius: 2px;
+            margin: 5px;
+            display: inline-block;
+          }
+
+          div.name-and-email {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 11px;
+            width: 145px;
+
+            span {
+              font-size: 1em;
+              width: 145px;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              display: inline-block;
+
+              &.email {
+                font-size: 0.9em;
+                opacity: 0.5;
+                position: relative;
+                top: -6px;
+              }
+            }
+          }
+        }
+
+        i {
+          right: 15px;
+          top: 16px;
+        }
+      }
     }
   }
 }

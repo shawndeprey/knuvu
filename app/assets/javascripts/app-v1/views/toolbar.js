@@ -3,7 +3,8 @@ App.ToolbarView = Ember.View.extend({
   classNames: ['toolbar'],
   classNameBindings: ['openBar'],
   openBar: true,
-  toggleToolbar: function(){
-    this.set('openBar', !this.get('openBar'));
+  openUserMenu: false,
+  toggleMenuOption: function(menuOption){
+    this.set(menuOption, !this.get(menuOption));
   }
 });
