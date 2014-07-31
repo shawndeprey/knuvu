@@ -5,8 +5,9 @@ App.SignupController = App.FormController.extend({
       self.clearErrors();
       self.get('model').save().then(
         function(inquiry){
-          self.showModal('Welcome to KnuVu, You\'re almost done! Please check your email for verification.');
+          self.showModal('Welcome to KnuVu, You\'re almost done! Please sign in to verify your account credentials.');
           self.resetModel();
+          self.transitionToRoute('signin');
         },
         function(response){
           self.parseErrorsFromResponse(response);

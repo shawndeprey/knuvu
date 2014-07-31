@@ -8,12 +8,12 @@
     <meta name="Description" content="Knuvu is a quantitative qualitative multivariate heatmapping decision tool.">
     <%= favicon_link_tag 'icons/favicon.ico' %>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= gzip_stylesheet_link_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
     <%= render 'layouts/app-v1/templates' %>
-    <%= javascript_include_tag "application" %>
+    <%= gzip_javascript_include_tag "application" %>
   </body>
 </html>

@@ -2,6 +2,7 @@ App.User = DS.Model.extend(Ember.Validations.Mixin, {
   validations: {
     email: { presence: true }
   },
+  avatar_url: DS.attr('string'),
   full_name: DS.attr('string'),
   email: DS.attr('string'),
   phone: DS.attr('string'),

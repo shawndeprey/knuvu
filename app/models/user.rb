@@ -1,3 +1,4 @@
+include ActionView::Helpers::AssetUrlHelper
 class User < ActiveRecord::Base
   #include Tire::Model::Search
   #include Tire::Model::Callbacks
@@ -28,13 +29,20 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
   after_destroy :clean_dependents
 
+  def generate_reset_hash!
+    self.reset_hash = ApplicationHelper::md5("#{self.full_name}#{self.email}#{Random.rand(1000000)}#{GENERATOR_ADDITION}")
+    self.save
+  end
+
   def encrypt_password
-    unless self.password.length == 32
-      self.password = ApplicationHelper::md5(self.password)
-    end
+    self.password = ApplicationHelper::md5(self.password) unless self.password.length == 32
   end
 
   def clean_dependents
     # Destroy all models that wont destroy themselves here. Leave no stragglers or islands!
+  end
+
+  def avatar_url
+    return self.avatar.blank? ? ActionController::Base.helpers.asset_path("stock-user.jpg") : self.avatar.url(:thumb)
   end
 end

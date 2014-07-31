@@ -8,6 +8,7 @@
 <div class="body">
   <div class="expanded">
     <p>{{#link-to 'index'}}Home{{/link-to}}</p>
+    <p>{{#link-to 'reset-password'}}Reset Password{{/link-to}}</p>
   </div>
   <div class="condensed">
     <p>CT</p>
@@ -24,7 +25,7 @@
     <div class="user-panel">
       <a {{action toggleMenuOption 'openUserMenu' target='view'}}>
         <div {{bind-attr class=":user-info view.openBar:open:close"}}>
-          <img class="logo" src="nothing" />
+          <img class="logo" {{bind-attr src=session_user.avatar_url}} alt="User Portrait">
           <div class="name-and-email">
             <span class="full-name">{{session_user.full_name}}</span>
             <br />

@@ -9,14 +9,14 @@ App.FormController = App.BaseController.extend({
     if(response.responseJSON){
       this.setErrors(response.responseJSON.errors);
     } else {
-      this.setErrors(['There was an issue with your submission. Please check your entries and try again.']);
+      this.setErrors(['Error object not found in request. Please contact an administrator about this issue.']);
     }
   },
   setErrors: function(errors){
     this.set('errors', errors);
     $('.errors').scrollToElement();
     this.set('disabled', false);
-    $('div#app-loading-indicator').addClass('on');
+    $('div#app-loading-indicator').addClass('off');
   },
   clearErrors: function(){
     this.set('errors', null);

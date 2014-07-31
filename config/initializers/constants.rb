@@ -3,3 +3,4 @@ GENERATOR_ADDITION = 'knuvuugbniuerbgeruoibgnui3buriobvwdbskjdb39393bnojsfdnbksb
 #GOOGLE_ANALYTICS_DOMAIN = 'logicly.org'
 #MIXPANEL_PRODUCTION_KEY = 'd0b342d8dbc6c763d02ea7ecaad8d282'
 #MIXPANEL_DEVELOPMENT_KEY = '4e15783856d5886e67b564b7738d417b'
+BASE_URL = Rails.env.production? ? 'http://knuvu.herokuapp.com/' : 'http://77.77.77.77:3000/'

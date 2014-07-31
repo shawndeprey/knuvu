@@ -6,6 +6,7 @@ App = Ember.Application.create();
 App.Router.map(function(){
   this.route('signin');
   this.route('signup');
+  this.route('reset-password');
   this.route('dashboard');
   //this.resource('users', function() {
     //this.resource('users.show', { path: '/:user_id' });
